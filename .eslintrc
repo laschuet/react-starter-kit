@@ -1,0 +1,48 @@
+{
+  "ecmaFeatures": {
+    "jsx": true,
+      "modules": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "rules": {
+    "accessor-pairs": 0,
+    "arrow-parens": [2, "as-needed"],
+    "arrow-spacing": [2, {"before": true, "after": true}],
+    "brace-style": [2, "1tbs"],
+    "camelcase": 2,
+    "comma-dangle": 0,
+    "consistent-return": 2,
+    "dot-location": [2, "property"],
+    "dot-notation": 0,
+    "eol-last": 2,
+    "indent": [2, 2, {"SwitchCase": 1}],
+    "jsx-quotes": [2, "prefer-double"],
+    "keyword-spacing": 2,
+    "no-dupe-class-members": 2,
+    "no-multi-spaces": 2,
+    "no-restricted-syntax": [2, "WithStatement"],
+    "no-shadow": 2,
+    "no-unused-expressions": 2,
+    "no-unused-vars": [2, {"args": "none"}],
+    "no-var": 2,
+    "object-curly-spacing": [2, "always"],
+    "prefer-const": 2,
+    "quotes": [2, "single", "avoid-escape"],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2,
+    "space-before-blocks": 2,
+    "spaced-comment": [2, "always", {"exceptions": ["-"]}],
+    "strict": [2, "never"],
+    "valid-jsdoc": 2,
+    "vars-on-top": 0
+  },
+  "plugins": [
+    "react"
+  ]
+}
