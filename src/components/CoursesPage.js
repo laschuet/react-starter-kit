@@ -13,13 +13,6 @@ class CoursesPage extends React.Component {
       </div>
     );
   }
-
-  //----------------------------------------------------------------------------
-  onFetchButtonClick() {
-    this.props.dispatch(
-      fetchCourses('https://www.udacity.com/public-api/v0/courses')
-    );
-  }
 }
 
 export default CoursesPage;
