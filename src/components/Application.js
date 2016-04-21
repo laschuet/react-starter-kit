@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { routeActions } from 'react-router-redux';
 
+import styles from "stylesheets/components/application";
+
 class Application extends React.Component {
   //----------------------------------------------------------------------------
   constructor(props) {
@@ -12,7 +14,7 @@ class Application extends React.Component {
   //----------------------------------------------------------------------------
   render() {
     return (
-      <div>
+      <div className={styles.root}>
         <ul>
           <li><Link to="/">Project</Link></li>
           <li><Link to="/courses">Courses</Link></li>

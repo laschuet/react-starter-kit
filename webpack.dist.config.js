@@ -36,7 +36,9 @@ var config = {
   module: {
     loaders: [{
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('css?sourceMap')
+      loader: ExtractTextPlugin.extract('css?sourceMap&' +
+          'modules&importLoaders=1&' +
+          'localIdentName=[name]__[local]__[hash:base64:5]')
     }, {
       test: /\.js$/,
       loader: 'babel',
