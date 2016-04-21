@@ -14,6 +14,7 @@ applications with React and related technologies.
 * webpack
 * Babel
 * ESLint
+* CSS modules
 
 ## Requirements
 
