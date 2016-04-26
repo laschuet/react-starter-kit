@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { fetchCourses } from 'actions/courses';
 import CourseContainerRoot from 'components/CourseContainerRoot';
 
 import styles from 'stylesheets/components/common/typography';
