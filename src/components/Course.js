@@ -3,10 +3,8 @@ import React from 'react';
 import styles from 'stylesheets/components/course';
 
 class Course extends React.Component {
-  //----------------------------------------------------------------------------
   render() {
     const { title, subtitle, level } = this.props;
-
     return (
       <tr>
         <td>{title}</td>

@@ -10,8 +10,7 @@ applications with React and related technologies.
 * react-redux
 * react-router
 * react-router-redux
-* redux-form
-* webpack
+* Webpack
 * Babel
 * ESLint
 * CSS modules

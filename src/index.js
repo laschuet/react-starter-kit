@@ -1,20 +1,26 @@
+import createHistory from 'history/createBrowserHistory';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { browserHistory, Router } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
+import { AppContainer } from 'react-hot-loader';
 
-import routes from 'routes';
+import Root from 'Root';
 import buildStore from 'store';
 
-const store = buildStore(browserHistory);
-const history = syncHistoryWithStore(browserHistory, store);
+const history = createHistory();
+const store = buildStore(history);
 
-ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history}>
-      {routes}
-    </Router>
-  </Provider>,
-  document.getElementById('react')
-);
+const domElement = document.getElementById('react');
+
+const render = () => {
+  ReactDOM.render(
+    <AppContainer>
+      <Root history={history} store={store} />
+    </AppContainer>,
+    domElement
+  );
+}
+
+render();
+if (module.hot) {
+  module.hot.accept('./Root', () => { render(); });
+}

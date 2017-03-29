@@ -1,15 +1,16 @@
 import React from 'react';
-import { IndexRoute, Route } from 'react-router';
+import { Route } from 'react-router-dom';
 
 import Application from 'components/Application';
 import CoursesPage from 'components/CoursesPage';
 import HomePage from 'components/HomePage';
 
 const routes = (
-  <Route path="/" component={Application}>
-    <IndexRoute component={HomePage} />
-    <Route path="courses" component={CoursesPage} />
-  </Route>
+  <div>
+    <Route exact path="/" component={Application} />
+    <Route exact path="/" component={HomePage} />
+    <Route path="/courses" component={CoursesPage} />
+  </div>
 );
 
 export default routes;

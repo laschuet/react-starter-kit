@@ -5,7 +5,6 @@ import { fetchCourses } from 'actions/courses';
 import CourseContainer from 'components/CourseContainer';
 
 class CourseContainerRoot extends React.Component {
-  //----------------------------------------------------------------------------
   render() {
     return (
       <div>
@@ -18,7 +17,6 @@ class CourseContainerRoot extends React.Component {
     );
   }
 
-  //----------------------------------------------------------------------------
   onFetchButtonClick() {
     this.props.dispatch(
       fetchCourses('https://www.udacity.com/public-api/v0/courses')

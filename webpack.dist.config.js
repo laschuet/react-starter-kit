@@ -11,56 +11,55 @@ var filenames = structureConfig.filenames;
 var config = {
   devtool: 'source-map',
   entry: {
-    vendor: [
+    vendors: [
       'history',
       'isomorphic-fetch',
       'react',
       'react-dom',
       'react-redux',
-      'react-router',
+      'react-router-dom',
       'react-router-redux',
       'redux',
-      'redux-form',
       'redux-thunk'
     ],
-    project: path.join(paths.source, filenames.indexJS)
+    app: path.join(paths.source, filenames.indexJS)
   },
   output: {
     filename: filenames.dist.JS,
     path: paths.dist
   },
   resolve: {
-    extensions: ['', '.css', '.js'],
-    root: paths.source
+    extensions: ['.css', '.js', '.jsx'],
+    modules: [paths.source, paths.nodeModules]
   },
   module: {
     loaders: [{
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('css?sourceMap&' +
+      use: ExtractTextPlugin.extract('css-loader?sourceMap&' +
           'modules&importLoaders=1&' +
           'localIdentName=[name]__[local]__[hash:base64:5]')
     }, {
-      test: /\.js$/,
-      loader: 'babel',
+      test: /\.jsx?$/,
+      use: 'babel-loader',
       exclude: paths.nodeModules
     }, {
       test: /\.(png|jpe?g)(\?.*)?$/,
-      loader: 'url?limit=8192'
+      use: 'url-loader?limit=8192'
     }, {
       test: /\.(svg|ttf|woff|woff2|eot)(\?.*)?$/,
-      loader: 'file'
+      use: 'file-loader'
     }]
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
     }),
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: filenames.dist.vendorJS
+      name: 'vendors',
+      filename: filenames.dist.vendorsJS
     }),
-    new ExtractTextPlugin(filenames.dist.CSS, {
+    new ExtractTextPlugin({
+      filename: filenames.dist.CSS,
       allChunks: true
     }),
     new HtmlWebpackPlugin({

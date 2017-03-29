@@ -3,7 +3,6 @@ import React from 'react';
 import Course from 'components/Course';
 
 class CourseContainer extends React.Component {
-  //----------------------------------------------------------------------------
   render() {
     const courseNodes = this.props.data.map(course =>
       <Course
@@ -13,7 +12,6 @@ class CourseContainer extends React.Component {
         level={course.level}
       />
     );
-
     return (
       <table>
         <thead>

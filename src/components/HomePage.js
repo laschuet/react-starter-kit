@@ -3,7 +3,6 @@ import React from 'react';
 import styles from 'stylesheets/components/common/typography';
 
 class HomePage extends React.Component {
-  //----------------------------------------------------------------------------
   render() {
     return (
       <div>

@@ -1,11 +1,9 @@
 import React from 'react';
 
 import CourseContainerRoot from 'components/CourseContainerRoot';
-
 import styles from 'stylesheets/components/common/typography';
 
 class CoursesPage extends React.Component {
-  //----------------------------------------------------------------------------
   render() {
     return (
       <div>
