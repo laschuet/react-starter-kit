@@ -35,7 +35,12 @@ Locally runs the single page application.
 ```
 npm run lint
 ```
-Lints the code.
+Checks the code.
+
+```
+npm run dist
+```
+Builds the single page application for distribution.
 
 ## License
 
