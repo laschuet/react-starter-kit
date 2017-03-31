@@ -6,10 +6,6 @@ import { routeActions } from 'react-router-redux';
 import styles from 'stylesheets/components/application';
 
 class Application extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className={styles.root}>
