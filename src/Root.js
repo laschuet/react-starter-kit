@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 
-import routes from 'routes';
+import Application from 'components/Application';
 
 class Root extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class Root extends React.Component {
     return (
       <Provider store={store}>
         <Router history={history}>
-          {routes}
+          <Application />
         </Router>
       </Provider>
     );
