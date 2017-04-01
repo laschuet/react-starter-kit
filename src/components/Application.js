@@ -6,22 +6,18 @@ import CoursesPage from 'components/CoursesPage';
 import HomePage from 'components/HomePage';
 import styles from 'stylesheets/components/application';
 
-class Application extends React.Component {
-  render() {
-    return (
-      <div className={styles.root}>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/courses">Courses</Link></li>
-        </ul>
-        <main>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/courses" component={CoursesPage} />
-        </main>
-      </div>
-    )
-  }
-}
+const Application = () => (
+  <div className={styles.root}>
+    <ul>
+      <li><Link to="/">Home</Link></li>
+      <li><Link to="/courses">Courses</Link></li>
+    </ul>
+    <main>
+      <Route exact path="/" component={HomePage} />
+      <Route path="/courses" component={CoursesPage} />
+    </main>
+  </div>
+);
 
 export default connect(
 )(Application);
