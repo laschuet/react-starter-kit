@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { fetchCourses } from 'actions/courses';
 import CourseContainer from 'components/CourseContainer';
 
-const CourseContainerRoot = (props) => {
+const CourseContainerRoot = props => {
   const onFetchButtonClick = () => {
     props.dispatch(
       fetchCourses('https://www.udacity.com/public-api/v0/courses')
