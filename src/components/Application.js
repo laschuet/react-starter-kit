@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link, Route } from 'react-router-dom';
 
 import CoursesPage from 'components/CoursesPage';
@@ -19,5 +18,4 @@ const Application = () => (
   </div>
 );
 
-export default connect(
-)(Application);
+export default Application;

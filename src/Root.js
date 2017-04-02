@@ -1,14 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router';
+import { ConnectedRouter } from 'react-router-redux';
 
 import Application from 'components/Application';
 
 const Root = props => (
   <Provider store={props.store}>
-    <Router history={props.history}>
+    <ConnectedRouter history={props.history}>
       <Application />
-    </Router>
+    </ConnectedRouter>
   </Provider>
 );
 
