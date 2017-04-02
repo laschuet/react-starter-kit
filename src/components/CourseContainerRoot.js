@@ -11,14 +11,13 @@ const CourseContainerRoot = props => {
     );
   };
 
-  const courses = [];
   return (
     <div>
       <button onClick={onFetchButtonClick}>
         Fetch
       </button>
       <br /><br />
-      <CourseContainer data={courses} />
+      <CourseContainer data={props.courses} />
     </div>
   );
 };
