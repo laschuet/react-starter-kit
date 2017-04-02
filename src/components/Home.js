@@ -2,10 +2,10 @@ import React from 'react';
 
 import styles from 'stylesheets/components/common/typography';
 
-const HomePage = () => (
+const Home = () => (
   <div>
     <h1 className={styles.heading}>Home</h1>
   </div>
 );
 
-export default HomePage;
+export default Home;

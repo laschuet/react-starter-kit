@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 
-import CoursesPage from 'components/CoursesPage';
-import HomePage from 'components/HomePage';
+import Courses from 'components/Courses';
+import Home from 'components/Home';
 import styles from 'stylesheets/components/application';
 
 const Application = () => (
@@ -12,8 +12,8 @@ const Application = () => (
       <li><Link to="/courses">Courses</Link></li>
     </ul>
     <main>
-      <Route exact path="/" component={HomePage} />
-      <Route path="/courses" component={CoursesPage} />
+      <Route exact path="/" component={Home} />
+      <Route path="/courses" component={Courses} />
     </main>
   </div>
 );
