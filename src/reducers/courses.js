@@ -9,6 +9,6 @@ const courses = (state = [], action) => {
     default:
       return state;
   }
-}
+};
 
 export default courses;
