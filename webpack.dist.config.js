@@ -41,7 +41,7 @@ var config = {
     }, {
       test: /\.jsx?$/,
       use: 'babel-loader',
-      exclude: paths.nodeModules
+      include: paths.source
     }, {
       test: /\.(png|jpe?g)(\?.*)?$/,
       use: 'url-loader?limit=8192'
