@@ -22,7 +22,7 @@ var config = {
   output: {
     filename: filenames.dev.JS,
     path: paths.source,
-		publicPath: '/dev/'
+    publicPath: '/dev/'
   },
   devtool: 'inline-source-map',
   module: {
@@ -54,7 +54,7 @@ var config = {
     new webpack.NoEmitOnErrorsPlugin()
   ],
   devServer: {
-		contentBase: paths.source,
+    contentBase: paths.source,
     historyApiFallback: true,
     host: 'localhost',
     hot: true,
