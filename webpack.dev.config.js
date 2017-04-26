@@ -30,19 +30,26 @@ var config = {
       test: /\.css$/,
       use: [
         'style-loader',
-        'css-loader?modules&importLoaders=1&' +
-            'localIdentName=[name]__[local]___[hash:base64:5]'
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            localIdentName: '[name]__[local]___[hash:base64:5]'
+          }
+        }
       ]
     }, {
       test: /\.jsx?$/,
-      use: 'babel-loader',
+      use: ['babel-loader'],
       include: paths.source
     }, {
-      test: /\.(png|jpe?g)(\?.*)?$/,
-      use: 'url-loader?limit=8192'
-    }, {
-      test: /\.(svg|ttf|woff|woff2|eot)(\?.*)?$/,
-      use: 'file-loader'
+      test: /\.(eot|jpe?g|png|svg|ttf|woff|woff2)$/,
+      use: [{
+        loader: 'url-loader',
+        options: {
+          limit: 8192
+        }
+      }]
     }]
   },
   plugins: [
