@@ -69,7 +69,6 @@ var config = {
     }),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
-        screw_ie8: true,
         warnings: false
       }
     })
