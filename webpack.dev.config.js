@@ -39,10 +39,10 @@ var config = {
       include: paths.source
     }, {
       test: /\.(png|jpe?g)(\?.*)?$/,
-      use: 'url?limit=8192'
+      use: 'url-loader?limit=8192'
     }, {
       test: /\.(svg|ttf|woff|woff2|eot)(\?.*)?$/,
-      use: 'file'
+      use: 'file-loader'
     }]
   },
   plugins: [
