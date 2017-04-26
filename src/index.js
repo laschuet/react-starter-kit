@@ -2,8 +2,8 @@ import createHistory from 'history/createBrowserHistory';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import { routerMiddleware, routerReducer } from 'react-router-redux';
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
+import { routerMiddleware } from 'react-router-redux';
+import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 
 import Root from 'components/Root';
