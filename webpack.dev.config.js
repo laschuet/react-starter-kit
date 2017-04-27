@@ -9,8 +9,7 @@ var config = {
   entry: {
     app: [
       'react-hot-loader/patch',
-      'webpack-dev-server/client?http://localhost:4000',
-      'webpack/hot/only-dev-server',
+      'webpack-hot-middleware/client',
       path.join(paths.source, filenames.indexJS)
     ]
   },
@@ -21,7 +20,7 @@ var config = {
   context: paths.source,
   output: {
     filename: filenames.dev.JS,
-    path: paths.source,
+    path: paths.dev,
     publicPath: '/dev/'
   },
   devtool: 'inline-source-map',
@@ -60,14 +59,6 @@ var config = {
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ],
-  devServer: {
-    contentBase: paths.source,
-    historyApiFallback: true,
-    host: 'localhost',
-    hot: true,
-    port: 4000,
-    publicPath: '/dev/'
-  }
 };
 
 module.exports = config;
