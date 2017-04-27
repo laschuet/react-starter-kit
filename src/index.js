@@ -29,7 +29,7 @@ const render = () => {
 
 render();
 if (module.hot) {
-  module.hot.accept('./components/Root', () => {
+  module.hot.accept('components/Root', () => {
     render();
   });
 }
