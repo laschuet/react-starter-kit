@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Course from 'components/Course';
+import Course from './Course';
 
 const CourseContainer = props => (
   <table>

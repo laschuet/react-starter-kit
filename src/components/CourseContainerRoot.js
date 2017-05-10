@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchCourses } from 'actions/courses';
-import CourseContainer from 'components/CourseContainer';
+import { fetchCourses } from '../actions/courses';
+import CourseContainer from './CourseContainer';
 
 const CourseContainerRoot = props => {
   const onFetchButtonClick = () => {

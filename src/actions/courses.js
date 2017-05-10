@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
-import * as actionTypes from 'constants/actionTypes';
+import * as actionTypes from '../constants/actionTypes';
 
 const requestCourses = () => ({
   type: actionTypes.COURSES_REQUEST

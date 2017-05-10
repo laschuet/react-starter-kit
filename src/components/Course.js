@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from 'stylesheets/components/course';
+import styles from '../stylesheets/components/course';
 
 const Course = props => (
   <tr>

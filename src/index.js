@@ -6,8 +6,8 @@ import { routerMiddleware } from 'react-router-redux';
 import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 
-import Root from 'components/Root';
-import reducer from 'reducers/index';
+import Root from './components/Root';
+import reducer from './reducers/index';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const history = createHistory();
@@ -29,7 +29,7 @@ const render = () => {
 
 render();
 if (module.hot) {
-  module.hot.accept('components/Root', () => {
+  module.hot.accept('./components/Root', () => {
     render();
   });
 }

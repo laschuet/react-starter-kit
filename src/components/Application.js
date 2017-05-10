@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 
-import Courses from 'components/Courses';
-import Home from 'components/Home';
-import styles from 'stylesheets/components/application';
+import Courses from './Courses';
+import Home from './Home';
+import styles from '../stylesheets/components/application';
 
 const Application = () => (
   <div className={styles.root}>
