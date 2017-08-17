@@ -2,7 +2,7 @@ import React from 'react';
 
 import Course from './Course';
 
-const CourseContainer = props => (
+const CourseContainer = props =>
   <table>
     <thead>
       <tr>
@@ -12,16 +12,15 @@ const CourseContainer = props => (
       </tr>
     </thead>
     <tbody>
-      {props.data.map(course => (
+      {props.data.map(course =>
         <Course
           key={course.key}
           title={course.title}
           subtitle={course.subtitle}
           level={course.level}
-        />
-      ))}
+        />,
+      )}
     </tbody>
-  </table>
-);
+  </table>;
 
 export default CourseContainer;

@@ -7,21 +7,20 @@ import CourseContainer from './CourseContainer';
 const CourseContainerRoot = props => {
   const onFetchButtonClick = () => {
     props.dispatch(
-      fetchCourses('https://www.udacity.com/public-api/v0/courses')
+      fetchCourses('https://www.udacity.com/public-api/v0/courses'),
     );
   };
 
   return (
     <div>
-      <button onClick={onFetchButtonClick}>
-        Fetch
-      </button>
-      <br /><br />
+      <button onClick={onFetchButtonClick}>Fetch</button>
+      <br />
+      <br />
       <CourseContainer data={props.courses} />
     </div>
   );
 };
 
-export default connect(
-  state => ({ courses: state.courses })
-)(CourseContainerRoot);
+export default connect(state => ({ courses: state.courses }))(
+  CourseContainerRoot,
+);

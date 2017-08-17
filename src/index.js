@@ -13,7 +13,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const history = createHistory();
 const store = createStore(
   reducer,
-  composeEnhancers(applyMiddleware(thunk, routerMiddleware(history)))
+  composeEnhancers(applyMiddleware(thunk, routerMiddleware(history))),
 );
 
 const domElement = document.getElementById('react');
@@ -23,7 +23,7 @@ const render = () => {
     <AppContainer>
       <Root history={history} store={store} />
     </AppContainer>,
-    domElement
+    domElement,
   );
 };
 

@@ -5,17 +5,20 @@ import Courses from './Courses';
 import Home from './Home';
 import styles from '../stylesheets/components/application';
 
-const Application = () => (
+const Application = () =>
   <div className={styles.root}>
     <ul>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/courses">Courses</Link></li>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/courses">Courses</Link>
+      </li>
     </ul>
     <main>
       <Route exact path="/" component={Home} />
       <Route path="/courses" component={Courses} />
     </main>
-  </div>
-);
+  </div>;
 
 export default Application;

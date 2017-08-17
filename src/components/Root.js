@@ -4,12 +4,11 @@ import { ConnectedRouter } from 'react-router-redux';
 
 import Application from './Application';
 
-const Root = props => (
+const Root = props =>
   <Provider store={props.store}>
     <ConnectedRouter history={props.history}>
       <Application />
     </ConnectedRouter>
-  </Provider>
-);
+  </Provider>;
 
 export default Root;

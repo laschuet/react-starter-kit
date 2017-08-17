@@ -2,10 +2,9 @@ import React from 'react';
 
 import styles from '../stylesheets/components/common/typography';
 
-const Home = () => (
+const Home = () =>
   <div>
     <h1 className={styles.heading}>Home</h1>
-  </div>
-);
+  </div>;
 
 export default Home;
