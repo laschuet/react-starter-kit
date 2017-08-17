@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CourseContainerRoot from './CourseContainerRoot';
 import styles from '../stylesheets/components/common/typography';
+import CourseContainerRoot from './CourseContainerRoot';
 
 const Courses = () =>
   <div>
