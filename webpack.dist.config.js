@@ -12,15 +12,22 @@ var config = {
   devtool: 'source-map',
   entry: {
     vendors: [
+      'babel-polyfill',
       'history',
+      'humps',
       'isomorphic-fetch',
+      'lodash',
+      'normalizr',
+      'prop-types',
+      'query-string',
       'react',
       'react-dom',
       'react-redux',
       'react-router-dom',
       'react-router-redux',
       'redux',
-      'redux-thunk'
+      'redux-thunk',
+      'reselect'
     ],
     app: path.join(paths.source, filenames.indexJS)
   },

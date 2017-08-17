@@ -8,6 +8,7 @@ var filenames = structureConfig.filenames;
 var config = {
   entry: {
     app: [
+      'babel-polyfill',
       'react-hot-loader/patch',
       'webpack-hot-middleware/client',
       path.join(paths.source, filenames.indexJS)
