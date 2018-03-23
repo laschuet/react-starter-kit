@@ -11,10 +11,12 @@ const receiveRepositories = json => ({
   repositories: json,
 });
 
-export const fetchRepositories = url => dispatch => {
+const fetchRepositories = url => dispatch => {
   dispatch(requestRepositories);
 
   return fetch(url)
     .then(response => response.json())
     .then(json => dispatch(receiveRepositories(json)));
 };
+
+export default fetchRepositories;

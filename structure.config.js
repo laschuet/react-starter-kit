@@ -16,7 +16,7 @@ var config = {
       JS: '[name].js',
       vendorsJS: 'vendors.js'
     },
-    indexJS: 'index.js',
+    indexJS: 'index.jsx',
     indexHTML: 'index.html'
   }
 };

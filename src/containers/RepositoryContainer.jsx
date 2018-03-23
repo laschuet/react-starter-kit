@@ -1,13 +1,17 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchRepositories } from '../actions/repositories';
+import fetchRepositories from '../actions/repositories';
 import Repository from '../components/Repository';
 
 class RepositoryContainer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  static propTypes = {
+    fetchRepositories: PropTypes.func.isRequired,
+    repositories: PropTypes.arrayOf(PropTypes.shape(
+      Repository.propTypes,
+    )).isRequired,
+  };
 
   componentDidMount() {
     this.props.fetchRepositories('https://api.github.com/users/laschuet/repos');
