@@ -1,12 +1,12 @@
 import React from 'react';
 
+import RepositoryContainer from '../containers/RepositoryContainer';
 import styles from '../stylesheets/components/common/typography.css';
-import RepositoryContainerRoot from './RepositoryContainerRoot';
 
 const Repositories = () =>
   <div>
     <h1 className={styles.heading}>Repositories</h1>
-    <RepositoryContainerRoot />
+    <RepositoryContainer />
   </div>;
 
 export default Repositories;
