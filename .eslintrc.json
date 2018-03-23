@@ -1,5 +1,9 @@
 {
-  "extends": "eslint:recommended",
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -46,6 +50,7 @@
     "vars-on-top": 0
   },
   "plugins": [
-    "react"
+    "react",
+    "prettier"
   ]
 }
