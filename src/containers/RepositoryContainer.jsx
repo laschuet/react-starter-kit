@@ -8,9 +8,8 @@ import Repository from '../components/Repository';
 class RepositoryContainer extends React.Component {
   static propTypes = {
     fetchRepositories: PropTypes.func.isRequired,
-    repositories: PropTypes.arrayOf(PropTypes.shape(
-      Repository.propTypes,
-    )).isRequired,
+    repositories: PropTypes.arrayOf(PropTypes.shape(Repository.propTypes))
+      .isRequired,
   };
 
   componentDidMount() {
@@ -27,13 +26,13 @@ class RepositoryContainer extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.repositories.map(repo =>
+          {this.props.repositories.map(repo => (
             <Repository
               key={repo.id}
               name={repo.name}
               description={repo.description}
-            />,
-          )}
+            />
+          ))}
         </tbody>
       </table>
     );

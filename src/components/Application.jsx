@@ -5,7 +5,7 @@ import styles from '../stylesheets/components/application.css';
 import Repositories from './Repositories';
 import Home from './Home';
 
-const Application = () =>
+const Application = () => (
   <div className={styles.root}>
     <ul>
       <li>
@@ -19,6 +19,7 @@ const Application = () =>
       <Route exact path="/" component={Home} />
       <Route path="/repositories" component={Repositories} />
     </main>
-  </div>;
+  </div>
+);
 
 export default Application;
