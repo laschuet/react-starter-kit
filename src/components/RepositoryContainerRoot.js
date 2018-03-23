@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { fetchRepositories } from '../actions/repositories';
-import RepositoryContainer from './RepositoryContainer';
+import RepositoryContainer from '../containers/RepositoryContainer';
 
 const RepositoryContainerRoot = props => {
   const onFetchButtonClick = () => {
