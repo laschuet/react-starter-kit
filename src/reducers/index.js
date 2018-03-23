@@ -1,10 +1,10 @@
 import { routerReducer } from 'react-router-redux';
 import { combineReducers } from 'redux';
 
-import coursesReducer from '../reducers/courses';
+import repositoriesReducer from '../reducers/repositories';
 
 const reducers = {
-  courses: coursesReducer,
+  repositories: repositoriesReducer,
   router: routerReducer,
 };
 
