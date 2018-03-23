@@ -6,6 +6,7 @@ var paths = structureConfig.paths;
 var filenames = structureConfig.filenames;
 
 var config = {
+  mode: 'development',
   entry: {
     app: [
       'babel-polyfill',
@@ -33,8 +34,9 @@ var config = {
         {
           loader: 'css-loader',
           options: {
-            modules: true,
-            localIdentName: '[name]__[local]___[hash:base64:5]'
+            camelCase: true,
+            localIdentName: '[name]__[local]___[hash:base64:5]',
+            modules: true
           }
         }
       ]
@@ -57,7 +59,6 @@ var config = {
       'process.env.NODE_ENV': '"development"'
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ],
 };

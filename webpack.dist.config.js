@@ -9,26 +9,9 @@ var paths = structureConfig.paths;
 var filenames = structureConfig.filenames;
 
 var config = {
+  mode: 'production',
   devtool: 'source-map',
   entry: {
-    vendors: [
-      'babel-polyfill',
-      'history',
-      'humps',
-      'isomorphic-fetch',
-      'lodash',
-      'normalizr',
-      'prop-types',
-      'query-string',
-      'react',
-      'react-dom',
-      'react-redux',
-      'react-router-dom',
-      'react-router-redux',
-      'redux',
-      'redux-thunk',
-      'reselect'
-    ],
     app: path.join(paths.source, filenames.indexJS)
   },
   output: {
@@ -40,15 +23,16 @@ var config = {
     modules: [paths.source, paths.nodeModules]
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.css$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
         use: [{
           loader: 'css-loader',
           options: {
-            modules: true,
+            camelCase: true,
             localIdentName: '[name]__[local]___[hash:base64:5]',
+            modules: true,
             sourceMap: true
           }
         }]
@@ -67,13 +51,21 @@ var config = {
       }]
     }]
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          chunks: 'initial',
+          enforce: true,
+          filename: filenames.dist.vendorsJS,
+          test: paths.nodeModules
+        }
+      }
+    }
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendors',
-      filename: filenames.dist.vendorsJS
     }),
     new ExtractTextPlugin({
       filename: filenames.dist.CSS,
@@ -83,11 +75,6 @@ var config = {
       filename: filenames.indexHTML,
       template: path.join(paths.source, filenames.indexHTML),
       inject: true
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
     })
   ]
 };
