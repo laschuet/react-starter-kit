@@ -14,6 +14,7 @@ applications with React and related technologies.
 * Babel
 * ESLint
 * CSS modules
+* Prettier
 
 ## Requirements
 
@@ -25,22 +26,37 @@ applications with React and related technologies.
 ```
 npm install
 ```
-Installs all dependencies.
+Install all dependencies.
 
 ```
 npm run dev
 ```
-Locally runs the single page application.
-
-```
-npm run lint
-```
-Checks the code.
+Locally run the single page application.
 
 ```
 npm run dist
 ```
-Builds the single page application for distribution.
+Build the single page application for distribution.
+
+```
+npm run lint
+```
+Lint the code.
+
+```
+npm run lint:fix
+```
+Lint the code including fixes.
+
+```
+npm run prettify
+```
+Run prettier.
+
+```
+npm run prettify:fix
+```
+Run prettier including fixes.
 
 ## License
 
