@@ -1,13 +1,16 @@
 {
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module"
   },
   "env": {
     "browser": true,
     "node": true
   },
-  "extends": "eslint:recommended",
   "parser": "babel-eslint",
   "rules": {
     "accessor-pairs": 0,
