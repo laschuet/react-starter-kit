@@ -4,7 +4,7 @@ import * as actionTypes from '../constants/actionTypes';
 
 const entities = (state = [], action) => {
   switch (action.type) {
-    case actionTypes.REPOSITORIES_SUCCESS:
+    case actionTypes.REPOSITORIES_FETCH_SUCCESS:
       return action.repositories;
     default:
       return state;
@@ -13,10 +13,10 @@ const entities = (state = [], action) => {
 
 const isFetching = (state = false, action) => {
   switch (action.type) {
-    case actionTypes.REPOSITORIES_REQUEST:
+    case actionTypes.REPOSITORIES_FETCH_REQUEST:
       return true;
-    case actionTypes.REPOSITORIES_FAILURE:
-    case actionTypes.REPOSITORIES_SUCCESS:
+    case actionTypes.REPOSITORIES_FETCH_FAILURE:
+    case actionTypes.REPOSITORIES_FETCH_SUCCESS:
       return false;
     default:
       return state;

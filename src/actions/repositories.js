@@ -2,28 +2,28 @@ import fetch from 'isomorphic-fetch';
 
 import * as actionTypes from '../constants/actionTypes';
 
-const requestRepositories = () => ({
-  type: actionTypes.REPOSITORIES_REQUEST,
+const fetchRepositoriesRequest = () => ({
+  type: actionTypes.REPOSITORIES_FETCH_REQUEST,
 });
 
-const receiveRepositories = json => ({
-  type: actionTypes.REPOSITORIES_SUCCESS,
+const fetchRepositoriesSuccess = json => ({
+  type: actionTypes.REPOSITORIES_FETCH_SUCCESS,
   repositories: json,
 });
 
-const failureRepositories = () => ({
-  type: actionTypes.REPOSITORIES_FAILURE,
+const fetchRepositoriesFailure = () => ({
+  type: actionTypes.REPOSITORIES_FETCH_FAILURE,
 });
 
 const fetchRepositories = url => async dispatch => {
-  dispatch(requestRepositories());
+  dispatch(fetchRepositoriesRequest());
 
   try {
     const response = await fetch(url);
     const json = await response.json();
-    dispatch(receiveRepositories(json));
+    dispatch(fetchRepositoriesSuccess(json));
   } catch (e) {
-    dispatch(failureRepositories());
+    dispatch(fetchRepositoriesFailure());
   }
 };
 
