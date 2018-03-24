@@ -8,6 +8,7 @@ import Repository from '../components/Repository';
 class RepositoryContainer extends React.Component {
   static propTypes = {
     fetchRepositories: PropTypes.func.isRequired,
+    isFetching: PropTypes.bool.isRequired,
     repositories: PropTypes.arrayOf(PropTypes.shape(Repository.propTypes))
       .isRequired,
   };
@@ -17,7 +18,9 @@ class RepositoryContainer extends React.Component {
   }
 
   render() {
-    return (
+    return this.props.isFetching ? (
+      <div>Loading...</div>
+    ) : (
       <table>
         <thead>
           <tr>
@@ -40,7 +43,8 @@ class RepositoryContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  repositories: state.repositories,
+  isFetching: state.repositories.isFetching,
+  repositories: state.repositories.entities,
 });
 
 export default connect(mapStateToProps, {

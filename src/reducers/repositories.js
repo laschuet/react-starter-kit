@@ -1,9 +1,9 @@
+import { combineReducers } from 'redux';
+
 import * as actionTypes from '../constants/actionTypes';
 
-const repositories = (state = [], action) => {
+const entities = (state = [], action) => {
   switch (action.type) {
-    case actionTypes.REPOSITORIES_REQUEST:
-      return state;
     case actionTypes.REPOSITORIES_SUCCESS:
       return action.repositories;
     default:
@@ -11,4 +11,19 @@ const repositories = (state = [], action) => {
   }
 };
 
-export default repositories;
+const isFetching = (state = false, action) => {
+  switch (action.type) {
+    case actionTypes.REPOSITORIES_REQUEST:
+      return true;
+    case actionTypes.REPOSITORIES_FAILURE:
+    case actionTypes.REPOSITORIES_SUCCESS:
+      return false;
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({
+  entities,
+  isFetching,
+});
