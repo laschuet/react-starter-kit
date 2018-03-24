@@ -5,8 +5,8 @@ const webpack = require('webpack');
 
 const structureConfig = require('./structure.config.js');
 
-const paths = structureConfig.paths;
-const filenames = structureConfig.filenames;
+const { paths } = structureConfig;
+const { filenames } = structureConfig;
 
 const config = {
   mode: 'production',
