@@ -11,12 +11,20 @@ const receiveRepositories = json => ({
   repositories: json,
 });
 
-const fetchRepositories = url => dispatch => {
+const failureRepositories = () => ({
+  type: actionTypes.REPOSITORIES_FAILURE,
+});
+
+const fetchRepositories = url => async dispatch => {
   dispatch(requestRepositories);
 
-  return fetch(url)
-    .then(response => response.json())
-    .then(json => dispatch(receiveRepositories(json)));
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    dispatch(receiveRepositories(json));
+  } catch (e) {
+    dispatch(failureRepositories);
+  }
 };
 
 export default fetchRepositories;
