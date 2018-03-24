@@ -16,14 +16,14 @@ const failureRepositories = () => ({
 });
 
 const fetchRepositories = url => async dispatch => {
-  dispatch(requestRepositories);
+  dispatch(requestRepositories());
 
   try {
     const response = await fetch(url);
     const json = await response.json();
     dispatch(receiveRepositories(json));
   } catch (e) {
-    dispatch(failureRepositories);
+    dispatch(failureRepositories());
   }
 };
 
