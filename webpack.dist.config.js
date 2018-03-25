@@ -12,7 +12,7 @@ const config = {
   mode: 'production',
   devtool: 'source-map',
   entry: {
-    app: ['babel-polyfill', path.join(paths.source, filenames.indexJS)],
+    app: path.join(paths.source, filenames.indexJS),
   },
   output: {
     filename: filenames.dist.JS,
