@@ -10,7 +10,6 @@ const config = {
   mode: 'development',
   entry: {
     app: [
-      'react-hot-loader/patch',
       'webpack-hot-middleware/client',
       path.join(paths.source, filenames.indexJS),
     ],
