@@ -7,14 +7,15 @@ applications with React and related technologies.
 
 * React
 * Redux
-* react-redux
-* react-router
-* react-router-redux
+* React Redux
+* React Router
+* Connected React Router
 * Webpack
 * Babel
 * ESLint
-* CSS modules
+* CSS Modules
 * Prettier
+* React Hot Loader
 
 ## Requirements
 
