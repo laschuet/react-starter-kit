@@ -4,7 +4,7 @@
   "description": "Boilerplate for developing single page applications in React",
   "author": "Lars Schütz (https://github.com/laschuet)",
   "license": "MIT",
-  "private": "true",
+  "private": true,
   "scripts": {
     "dev": "node dev.js",
     "lint": "eslint --ext .jsx --ext .js .",
