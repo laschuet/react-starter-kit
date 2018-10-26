@@ -1,5 +1,3 @@
-import fetch from 'isomorphic-fetch';
-
 import * as actionTypes from '../constants/actionTypes';
 
 const fetchRepositoriesRequest = () => ({
