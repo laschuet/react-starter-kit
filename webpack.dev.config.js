@@ -11,7 +11,7 @@ const config = {
   entry: {
     app: [
       'webpack-hot-middleware/client',
-      path.join(paths.source, filenames.indexJS),
+      path.join(paths.source, filenames.indexJSX),
     ],
   },
   resolve: {

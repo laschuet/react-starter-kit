@@ -16,7 +16,7 @@ const config = {
       JS: '[name].js',
       vendorsJS: 'vendors.js',
     },
-    indexJS: 'index.jsx',
+    indexJSX: 'index.jsx',
     indexHTML: 'index.html',
   },
 };
