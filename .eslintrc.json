@@ -1,10 +1,5 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "airbnb",
-    "prettier",
-    "prettier/react"
-  ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -17,19 +12,20 @@
     "es6": true,
     "node": true
   },
-  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "fbjs-opensource",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended",
+    "prettier/react"
+  ],
   "plugins": [
-    "react",
+    "jsx-a11y",
     "prettier"
   ],
   "rules": {
-    "import/no-extraneous-dependencies": ["error", {
-      "devDependencies": [
-        "dev.js",
-        "dist.js",
-        "webpack.*.config.js"
-      ]
-    }],
+    "babel/no-await-in-loop": "off",
+    "no-await-in-loop": "error",
     "jsx-a11y/anchor-is-valid": ["error", {
       "components": ["Link"],
       "specialLink": ["to"]
