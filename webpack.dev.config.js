@@ -8,23 +8,22 @@ const { filenames } = structureConfig;
 
 const config = {
   mode: 'development',
+  context: paths.source,
   entry: {
     app: [
       'webpack-hot-middleware/client',
-      path.join(paths.source, filenames.indexJSX),
+      path.join(paths.source, filenames.indexJsx),
     ],
+  },
+  output: {
+    filename: filenames.dev.js,
+    path: paths.dev,
+    publicPath: '/dev/',
   },
   resolve: {
     extensions: ['.css', '.js', '.jsx'],
     modules: [paths.source, paths.nodeModules],
   },
-  context: paths.source,
-  output: {
-    filename: filenames.dev.JS,
-    path: paths.dev,
-    publicPath: '/dev/',
-  },
-  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -59,6 +58,7 @@ const config = {
       },
     ],
   },
+  devtool: 'inline-source-map',
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"development"',

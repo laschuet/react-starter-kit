@@ -9,15 +9,15 @@ const config = {
   },
   filenames: {
     dev: {
-      JS: '[name].js',
+      js: '[name].js',
     },
     dist: {
-      CSS: '[name].css',
-      JS: '[name].js',
-      vendorsJS: 'vendors.js',
+      css: '[name].css',
+      js: '[name].js',
     },
-    indexJSX: 'index.jsx',
-    indexHTML: 'index.html',
+    indexEjs: 'index.ejs',
+    indexJsx: 'index.jsx',
+    indexHtml: 'index.html',
   },
 };
 

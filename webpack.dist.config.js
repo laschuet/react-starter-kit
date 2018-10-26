@@ -1,6 +1,8 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 
 const structureConfig = require('./structure.config.js');
@@ -10,12 +12,11 @@ const { filenames } = structureConfig;
 
 const config = {
   mode: 'production',
-  devtool: 'source-map',
   entry: {
-    app: path.join(paths.source, filenames.indexJSX),
+    app: path.join(paths.source, filenames.indexJsx),
   },
   output: {
-    filename: filenames.dist.JS,
+    filename: filenames.dist.js,
     path: paths.dist,
   },
   resolve: {
@@ -26,20 +27,17 @@ const config = {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                camelCase: true,
-                localIdentName: '[name]__[local]___[hash:base64:5]',
-                modules: true,
-                sourceMap: true,
-              },
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              camelCase: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+              modules: true,
             },
-          ],
-        }),
+          },
+        ],
       },
       {
         test: /\.jsx?$/,
@@ -60,29 +58,29 @@ const config = {
     ],
   },
   optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+      }),
+      new OptimizeCssAssetsPlugin({}),
+    ],
     splitChunks: {
-      cacheGroups: {
-        vendor: {
-          chunks: 'initial',
-          enforce: true,
-          filename: filenames.dist.vendorsJS,
-          test: paths.nodeModules,
-        },
-      },
+      chunks: 'all',
+      name: 'vendors',
     },
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"',
     }),
-    new ExtractTextPlugin({
-      filename: filenames.dist.CSS,
-      allChunks: true,
+    new MiniCssExtractPlugin({
+      filename: filenames.dist.css,
     }),
     new HtmlWebpackPlugin({
-      filename: filenames.indexHTML,
-      template: path.join(paths.source, filenames.indexHTML),
-      inject: true,
+      filename: filenames.indexHtml,
+      template: path.join(paths.source, filenames.indexEjs),
+      inject: false,
     }),
   ],
 };
