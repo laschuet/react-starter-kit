@@ -47,6 +47,9 @@ const mapStateToProps = state => ({
   repositories: state.repositories.entities,
 });
 
-export default connect(mapStateToProps, {
-  fetchRepositories,
-})(RepositoryContainer);
+export default connect(
+  mapStateToProps,
+  {
+    fetchRepositories,
+  },
+)(RepositoryContainer);
