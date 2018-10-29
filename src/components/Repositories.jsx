@@ -4,10 +4,10 @@ import RepositoryContainer from '../containers/RepositoryContainer';
 import styles from '../stylesheets/components/common/typography.css';
 
 const Repositories = () => (
-  <div>
+  <React.Fragment>
     <h1 className={styles.heading}>Repositories</h1>
     <RepositoryContainer />
-  </div>
+  </React.Fragment>
 );
 
 export default Repositories;
