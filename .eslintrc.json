@@ -21,7 +21,8 @@
   ],
   "plugins": [
     "jsx-a11y",
-    "prettier"
+    "prettier",
+    "react-hooks"
   ],
   "rules": {
     "babel/no-await-in-loop": "off",
@@ -30,6 +31,7 @@
       "components": ["Link"],
       "specialLink": ["to"]
     }],
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react-hooks/rules-of-hooks": "error"
   }
 }
