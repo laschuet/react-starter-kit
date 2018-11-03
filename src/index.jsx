@@ -11,11 +11,11 @@ import thunk from 'redux-thunk';
 import Application from './components/Application';
 import createRootReducer from './reducers/index';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const history = createBrowserHistory();
 const store = createStore(
   createRootReducer(history),
-  composeEnhancers(applyMiddleware(thunk, routerMiddleware(history))),
+  composeEnhancer(applyMiddleware(thunk, routerMiddleware(history))),
 );
 
 const domElement = document.getElementById('react');
