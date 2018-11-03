@@ -1,9 +1,5 @@
 import '@babel/polyfill';
-import {
-  ConnectedRouter,
-  connectRouter,
-  routerMiddleware,
-} from 'connected-react-router';
+import { ConnectedRouter, routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -13,12 +9,12 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 
 import Application from './components/Application';
-import reducer from './reducers/index';
+import createRootReducer from './reducers/index';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const history = createBrowserHistory();
 const store = createStore(
-  connectRouter(history)(reducer),
+  createRootReducer(history),
   composeEnhancers(applyMiddleware(thunk, routerMiddleware(history))),
 );
 
