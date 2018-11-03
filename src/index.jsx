@@ -39,4 +39,8 @@ if (module.hot) {
   module.hot.accept('./components/Application', () => {
     render();
   });
+
+  module.hot.accept('./reducers/index', () => {
+    store.replaceReducer(createRootReducer(history));
+  });
 }
