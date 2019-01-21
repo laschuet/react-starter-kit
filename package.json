@@ -7,11 +7,11 @@
   "private": true,
   "scripts": {
     "dev": "node dev.js",
-    "lint": "eslint --ext .jsx --ext .js .",
-    "lint:fix": "eslint --fix --ext .jsx --ext .js .",
     "dist": "node dist.js",
-    "prettify": "prettier --single-quote --trailing-comma all \"src/**/*.{js,jsx}\"",
-    "prettify:fix": "prettier --single-quote --trailing-comma all --write \"src/**/*.{js,jsx}\""
+    "lint": "eslint --ext .jsx --ext .js .",
+    "lint-fix": "eslint --fix --ext .jsx --ext .js .",
+    "prettier": "prettier --single-quote --trailing-comma all \"src/**/*.{js,jsx}\"",
+    "prettier-fix": "prettier --single-quote --trailing-comma all --write \"src/**/*.{js,jsx}\""
   },
   "keywords": [
     "react",
