@@ -48,7 +48,7 @@ npm run lint
 Lint the code.
 
 ```
-npm run lint:fix
+npm run lint-fix
 ```
 Lint the code including fixes.
 
@@ -58,7 +58,7 @@ npm run prettify
 Run prettier.
 
 ```
-npm run prettify:fix
+npm run prettify-fix
 ```
 Run prettier including fixes.
 
