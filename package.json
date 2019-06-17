@@ -83,6 +83,7 @@
   "babel": {
     "presets": [
       ["@babel/preset-env", {
+        "corejs": 3,
         "modules": false,
         "useBuiltIns": "entry"
       }],
@@ -138,7 +139,7 @@
     },
     "settings": {
       "react": {
-        "version": "16.7.0-alpha.0"
+        "version": "detect"
       }
     }
   },
