@@ -1,4 +1,5 @@
 import React from 'react';
+import { hot } from 'react-hot-loader/root';
 import { Link, Route } from 'react-router-dom';
 
 import styles from '../stylesheets/components/application.css';
@@ -27,4 +28,4 @@ const Application = () => (
   </div>
 );
 
-export default Application;
+export default hot(Application);
