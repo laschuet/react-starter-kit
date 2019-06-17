@@ -1,4 +1,4 @@
-import 'core-js/stabel';
+import 'core-js/stable';
 import 'react-hot-loader';
 import 'regenerator-runtime/runtime';
 import { ConnectedRouter, routerMiddleware } from 'connected-react-router';
