@@ -1,4 +1,5 @@
-import '@babel/polyfill';
+import 'core-js/stabel';
+import 'regenerator-runtime/runtime';
 import { ConnectedRouter, routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import React from 'react';
