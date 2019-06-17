@@ -36,9 +36,10 @@ const config = {
           {
             loader: 'css-loader',
             options: {
-              camelCase: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-              modules: true,
+              localsConvention: 'camelCase',
+              modules: {
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+              },
             },
           },
         ],
