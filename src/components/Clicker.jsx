@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { setConfig } from 'react-hot-loader';
 
 import styles from '../stylesheets/components/common/typography.css';
-
-setConfig({ pureSFC: true });
 
 const Clicker = () => {
   const [clicks, setClicks] = useState(0);
